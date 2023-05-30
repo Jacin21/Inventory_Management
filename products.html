@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+</head>
+<body>
+    <h1>Products</h1>
+    <form method="POST" action="/products">
+        <label for="product_id">Product ID:</label>
+        <input type="text" id="product_id" name="product_id" required><br><br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <input type="submit" value="Add Product">
+    </form>
+    <table>
+        <tr>
+            <th>Product ID</th>
+            <th>Name</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.product_id }}</td>
+            <td>{{ product.name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
